@@ -1,0 +1,9 @@
+# IDE
+.idea/*
+# Python Compile cache
+__pycache__/*
+# Source file and target file
+target/*.txt
+source/*.xlsx
+# Vritual env packages
+venv/**
