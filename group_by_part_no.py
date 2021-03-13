@@ -72,6 +72,8 @@ def process_file(filename):
 def run_process():
     files = os.listdir(INPUT_FILE_DIR)
     for file in files:
+        if (not file.endswith('.xlsx')) or file.startswith('~'):
+            continue
         process_file(file)
 
 
