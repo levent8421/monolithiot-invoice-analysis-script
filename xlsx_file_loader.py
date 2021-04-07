@@ -9,7 +9,7 @@ class XlsxFileLoader:
 
     def open(self):
         print('Open xlsx file: [%s]' % self._file)
-        self._wb = load_workbook(self._file)
+        self._wb = load_workbook(self._file, data_only=True)
 
     def close(self):
         if self._wb:

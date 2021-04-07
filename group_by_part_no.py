@@ -29,7 +29,12 @@ def reduce_rows(rows, sheet):
     pallets = sheet.pallets
     items = [part_no, part_name]
     for row in rows:
-        pcs_sum += row.pcs
+        try:
+            pcs = int(row.pcs)
+        except Exception as e:
+            print('Can not convert [%s] to int! error=[%s]' % (row.pcs, e))
+            return
+        pcs_sum += pcs
         remark_items.append('(%s)%s/%s' % (row.pcs, row.pallet_num, pallets))
     remark_str = '; '.join(remark_items)
     items.append(pcs_sum)
